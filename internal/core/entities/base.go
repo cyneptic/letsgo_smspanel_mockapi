@@ -14,7 +14,3 @@ type DBModel struct {
 	DeleltedAt *gorm.DeletedAt
 }
 
-func (d *DBModel) BeforeCreate(tx *gorm.DB) (err error) {
-	d.ID = uuid.New()
-	return nil
-}

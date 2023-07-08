@@ -2,7 +2,7 @@ package controller
 
 import (
 	"net/http"
-	"time"
+	
 
 	"github.com/cyneptic/letsgo_smspanel_mockapi/internal/core/entities"
 	"github.com/cyneptic/letsgo_smspanel_mockapi/internal/core/ports"
@@ -28,7 +28,7 @@ func AddMessageRoutes(e *echo.Echo) {
 }
 func (h *MessageHandler) SaveMessage(c echo.Context) error {
 	newMessage := new(entities.Message)
-	newMessage.DBModel.CreatedAt = time.Now()
+	
 
 	err := c.Bind(&newMessage); if err != nil {
 		return c.JSON(http.StatusBadRequest, "bad request")
